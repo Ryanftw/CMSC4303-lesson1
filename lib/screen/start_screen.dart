@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lesson1/screen/image_screen.dart';
+import 'package:lesson1/screen/materialdesign_screen.dart';
 
 class StartScreen extends StatelessWidget {
   static const routeName = '/startScreen';
@@ -44,16 +46,13 @@ class StartScreen extends StatelessWidget {
         body: Column(
           children: [
             RaisedButton(
-              onPressed: () {
-                print('Menu 1');
-              },
-              child: Text('Menu1'),
+              onPressed: () =>
+                  Navigator.pushNamed(context, MaterialDesignScreen.routeName),
+              child: Text('Material Design Demo'),
             ),
             RaisedButton(
-              onPressed: () {
-                print('Menu 2');
-              },
-              child: Text('Menu 2'),
+              onPressed: () => Navigator.pushNamed(context, ImageScreen.routeName),
+              child: Text('Image Demo'),
             ),
             Text('Third Menu'),
           ],
