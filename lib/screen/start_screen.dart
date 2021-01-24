@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lesson1/screen/businesscard_screen.dart';
+import 'package:lesson1/screen/button_screen.dart';
+import 'package:lesson1/screen/expandedwidget_screen.dart';
+import 'package:lesson1/screen/font_screen.dart';
 import 'package:lesson1/screen/image_screen.dart';
+import 'package:lesson1/screen/rowcol_screen.dart';
 import 'package:lesson1/screen/materialdesign_screen.dart';
 
 class StartScreen extends StatelessWidget {
@@ -43,19 +48,66 @@ class StartScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: Column(
-          children: [
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, MaterialDesignScreen.routeName),
-              child: Text('Material Design Demo'),
-            ),
-            RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, ImageScreen.routeName),
-              child: Text('Image Demo'),
-            ),
-            Text('Third Menu'),
-          ],
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              RaisedButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, MaterialDesignScreen.routeName),
+                child: Text(
+                  'Material Design Demo',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () => Navigator.pushNamed(context, ImageScreen.routeName),
+                child: Text(
+                  'Image Demo',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () => Navigator.pushNamed(context, ButtonScreen.routeName),
+                child: Text(
+                  'Button Demo',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () => Navigator.pushNamed(context, FontScreen.routeName),
+                child: Text(
+                  'CustomFont Demo',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () => Navigator.pushNamed(context, RowColScreen.routeName),
+                child: Text(
+                  'Row/Column Layout Demo',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, ExpandedWidgetScreen.routeName),
+                child: Text(
+                  'Expanded Widget Demo',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, BusinessCardScreen.routeName),
+                child: Text(
+                  'My Business Card',
+                  style: Theme.of(context).textTheme.button,
+                ),
+              ),
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
